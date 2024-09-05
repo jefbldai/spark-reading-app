@@ -1,11 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 // Colors
 $clr-blue: #008abc;
+$clr-red: #bc0000;
 $clr-title: #686868;
 $clr-btn-light: #8d8d8d;
 $clr-btn-dark: #898989;
@@ -17,6 +12,12 @@ $font-size-base: 1rem;
 $font-size-s: 1.125rem;
 $font-size-l: 2rem;
 $font-size-m: 1.5rem;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   background-color: $clr-background;
@@ -92,12 +93,19 @@ header {
     opacity: 0.5;
   }
 
-  &.primary {
-    background-color: $clr-blue;
+  &.primary,
+  &.danger {
     width: 280px;
     height: 32px;
     color: $clr-white;
     font-size: $font-size-m;
+  }
+
+  &.primary {
+    background-color: $clr-blue;
+  }
+  &.danger {
+    background-color: $clr-red;
   }
 
   &.edit,
@@ -155,11 +163,19 @@ header {
   display: none;
 }
 
-.edit-header {
+.create-header,
+.class-code-header {
   color: $clr-blue;
   margin: 48px 0 24px;
 }
 
+.create-header {
+  color: $clr-blue;
+}
+
+.class-code-header {
+  display: none;
+}
 .text-input {
   border-radius: 100px;
   border: none;
@@ -188,6 +204,6 @@ header {
   margin: 32px 0 24px;
 }
 
-.class-code-header {
+#delete-btn {
   display: none;
 }

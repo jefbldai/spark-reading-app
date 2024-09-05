@@ -75,12 +75,17 @@ header {
   cursor: not-allowed;
   opacity: 0.5;
 }
-.button.primary {
-  background-color: #008abc;
+.button.primary, .button.danger {
   width: 280px;
   height: 32px;
   color: #fff;
   font-size: 1.5rem;
+}
+.button.primary {
+  background-color: #008abc;
+}
+.button.danger {
+  background-color: #bc0000;
 }
 .button.edit, .button.save, .button.cancel {
   width: 112px;
@@ -131,9 +136,18 @@ header {
   display: none;
 }
 
-.edit-header {
+.create-header,
+.class-code-header {
   color: #008abc;
   margin: 48px 0 24px;
+}
+
+.create-header {
+  color: #008abc;
+}
+
+.class-code-header {
+  display: none;
 }
 
 .text-input {
@@ -163,6 +177,6 @@ header {
   margin: 32px 0 24px;
 }
 
-.class-code-header {
+#delete-btn {
   display: none;
 }/*# sourceMappingURL=styles.css.map */
