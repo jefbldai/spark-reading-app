@@ -19,8 +19,8 @@
     <title>Spark Reading</title>
   </head>
   <body>
-    <header>
-      <div>
+    <main>
+      <header class="nav-container">
         <a
           class="header-logo"
           href="https://www.pearson.com/en-ca.html"
@@ -30,47 +30,127 @@
             class="header-logo"
             alt="Pearson logo"
         /></a>
-      </div>
-    </header>
-    <section class="container select-classroom">
-      <h2>Select Your Classroom</h2>
-      <div class="classroom-selection-list">
-        <!-- <div class="class-item-container">
-          <div class="class-logo"></div>
-          <div class="class-name">Susan's Class</div>
-          <div class="class-btn">
-            <button class="button edit">Edit</button>
+
+        <div
+          id="back-button"
+          onclick="handleBackButtonClick()"
+          class="nav-button"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 416 416"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M201.38 288L122 208L201.38 128M133.03 208H294"
+              stroke="currentColor"
+              stroke-width="32"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M400 208C400 102 314 16 208 16C102 16 16 102 16 208C16 314 102 400 208 400C314 400 400 314 400 208Z"
+              stroke="currentColor"
+              stroke-width="32"
+              stroke-miterlimit="10"
+            />
+          </svg>
+
+          Back
+        </div>
+        <img
+          src="https://spark.pearson.com/assets/sparkreading_logo.png"
+          class="main-logo"
+          alt="spark-reading-logo"
+          width="307px"
+          height="184px"
+        />
+
+        <div id="help-button" class="nav-button">
+          <svg
+            width="24px"
+            height="24px"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+            class="svg-icon"
+          >
+            <path
+              d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm169.8-90.7c7.9-22.3 29.1-37.3 52.8-37.3l58.3 0c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24l0-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1l-58.3 0c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
+              fill="currentColor"
+            />
+          </svg>
+          Help
+        </div>
+      </header>
+      <section class="container main select-classroom">
+        <h2 id="select-your-classroom">Select Your Classroom</h2>
+        <div class="classroom-selection-list"></div>
+        <button class="button primary">Create Classroom</button>
+      </section>
+      <section class="container main edit-classroom">
+        <div class="class-logo edit"></div>
+        <input
+          type="text"
+          class="text-input"
+          id="class-name"
+          placeholder="CLASS NAME"
+        />
+        <h2 id="create-header" class="header">What is your class code?</h2>
+        <h2 class="class-code-header"></h2>
+        <input
+          type="text"
+          class="text-input"
+          id="class-code"
+          placeholder="YOUR CODE"
+          maxlength="6"
+        />
+        <div class="btn-container">
+          <button class="button cancel">Cancel</button>
+          <button class="button save" disabled>Save</button>
+        </div>
+        <button id="delete-btn" class="button danger">Delete Classroom</button>
+        <h3 class="footer-note">Your class code is provided by your teacher</h3>
+      </section>
+      <section id="student-list" class="container">
+        <h2 id="student-list-header" class="header"></h2>
+        <div class="student-list-container"></div>
+      </section>
+
+      <section id="student-login" class="container">
+        <h2 id="student-profile" class="header">
+          You are:
+          <span class="student"
+            ><div class="student-logo"></div>
+            <div class="student-name"></div
+          ></span>
+        </h2>
+        <h2 id="student-login-header" class="header">What's your password?</h2>
+        <form>
+          <div class="form-container">
+            <input
+              type="password"
+              class="password-input"
+              id="password"
+              placeholder="PASSWORD"
+            />
+            <button submit id="login-button" class="button primary">
+              Login
+              <div class="button-icon"></div>
+            </button>
           </div>
-        </div> -->
-      </div>
-      <button class="button primary">Create Classroom</button>
-    </section>
-    <section class="container edit-classroom">
-      <div class="class-logo edit"></div>
-      <input
-        type="text"
-        class="text-input"
-        id="class-name"
-        placeholder="CLASS NAME"
-      />
-      <h2 class="create-header">What is your class code?</h2>
-      <h2 class="class-code-header"></h2>
-      <input
-        type="text"
-        class="text-input"
-        id="class-code"
-        placeholder="YOUR CODE"
-        maxlength="6"
-      />
-      <div class="btn-container">
-        <button class="button cancel">Cancel</button>
-        <button class="button save" disabled>Save</button>
-      </div>
-      <button id="delete-btn" class="button danger">Delete Classroom</button>
-      <h3 class="footer-note">Your class code is provided by your teacher</h3>
-    </section>
+        </form>
+      </section>
+    </main>
 
     <script>
+      let classObject = {};
+      let classrooms = [];
+      let stepCount = 0;
+      let studentList = [];
+      let studentId;
+
       const selectClassroomSection =
         document.querySelector(".select-classroom");
       const editClassroomSection = document.querySelector(".edit-classroom");
@@ -82,112 +162,125 @@
       const deleteBtn = document.getElementById("delete-btn");
       const footerNote = document.querySelector(".footer-note");
       const classCodeHeader = document.querySelector(".class-code-header");
-      const createHeader = document.querySelector(".create-header");
+      const createHeader = document.getElementById("create-header");
+      const studentListSection = document.getElementById("student-list");
+      const studentLoginSection = document.getElementById("student-login");
+      const navContainer = document.querySelector(".nav-container");
+      const studentListHeader = document.getElementById("student-list-header");
+      const navLogo = document.querySelector(".header-logo");
+      const studentName = document.querySelector(".student-name");
+      const backButton = document.getElementById("back-button");
 
-      // Array to store classrooms
-      let classrooms = [];
-
-      // Function to check if Save button should be enabled
       function validateInputs() {
         const className = classNameInput.value.trim();
         const classCode = classCodeInput.value.trim();
-
         saveButton.disabled = !(className && classCode.length === 6);
       }
 
-      // Function to show edit classroom and hide select classroom
       function showEditClassroom() {
         selectClassroomSection.style.display = "none";
         editClassroomSection.style.display = "flex";
+        studentListSection.style.display = "none";
+        backButton.style.display = "none";
+        navLogo.style.display = "flex";
+        navContainer.style.backgroundColor = "transparent";
       }
 
-      // Function to show select classroom and hide edit classroom
       function showSelectClassroom() {
         selectClassroomSection.style.display = "flex";
         editClassroomSection.style.display = "none";
+        studentListSection.style.display = "none";
+        backButton.style.display = "none";
+        navLogo.style.display = "flex";
+        navContainer.style.backgroundColor = "transparent";
       }
 
-      // Function to handle the "Edit" action
+      function showStudentList() {
+        selectClassroomSection.style.display = "none";
+        editClassroomSection.style.display = "none";
+        studentListSection.style.display = "flex";
+        backButton.style.display = "flex";
+        navLogo.style.display = "none";
+        navContainer.style.backgroundColor = "#f3f3f3";
+      }
+
+      function showStudentLogin() {
+        selectClassroomSection.style.display = "none";
+        editClassroomSection.style.display = "none";
+        studentListSection.style.display = "none";
+        studentLoginSection.style.display = "flex";
+        backButton.style.display = "flex";
+        navLogo.style.display = "none";
+        navContainer.style.backgroundColor = "#f3f3f3";
+      }
+
       function handleEditClassroom(event) {
         if (event.target.classList.contains("edit")) {
           const classItem = event.target.closest(".class-item-container");
-          const classCode = classItem.dataset.classCode;
+          const classId = classItem.dataset.classId;
 
-          // Find the classroom in the array
-          const classroom = classrooms.find(
-            (cls) => cls.classCode === classCode
-          );
+          const classroom = classrooms.find((cls) => cls.id === classId);
 
-          createHeader.style.display = "none";
-          footerNote.style.display = "none";
-          deleteBtn.style.display = "block";
-          classCodeHeader.style.display = "block";
-
-          // Update the class code header
           if (classroom) {
-            classCodeHeader.textContent = `Your Class Code: ${classCode}`;
-            // Populate the inputs with the selected class details
+            createHeader.style.display = "none";
+            footerNote.style.display = "none";
+            deleteBtn.style.display = "block";
+            classCodeHeader.style.display = "block";
+
             classNameInput.value = classroom.className;
             classCodeInput.value = classroom.classCode;
-            classCodeInput.readOnly = true;
-            classCodeInput.disabled = true;
 
-            // Validate inputs to enable the Save button if conditions are met
+            classCodeInput.dataset.classId = classId;
+
             validateInputs();
 
-            // Show the edit classroom section
             showEditClassroom();
           }
         }
       }
 
-      // Function to handle the "Create" action
       function handleCreateClassroom() {
-        // Clear input fields
         classNameInput.value = "";
         classCodeInput.value = "";
-        saveButton.disabled = true; // Disable the save button initially
+        saveButton.disabled = true;
         createHeader.style.display = "block";
         footerNote.style.display = "block";
         deleteBtn.style.display = "none";
         classCodeHeader.style.display = "none";
 
-        // Update the class code header
         classCodeHeader.textContent = "";
 
-        // Show the edit classroom section
+        classCodeInput.dataset.classId = "";
+
         showEditClassroom();
       }
 
-      // Attach event listener for the "Edit" button click
       document
         .querySelector(".classroom-selection-list")
         .addEventListener("click", handleEditClassroom);
 
-      // Attach event listener for the "Create Classroom" button click
       createButton.addEventListener("click", handleCreateClassroom);
 
       deleteBtn.addEventListener("click", deleteClassroom);
 
       function deleteClassroom() {
-        const classCode = classCodeInput.value.trim();
+        const classId = classCodeInput.dataset.classId;
 
-        // Remove the classroom from the array
-        classrooms = classrooms.filter((cls) => cls.classCode !== classCode);
+        const confirmed = confirm("Do you want to delete this classroom?");
 
-        // Update the UI
-        renderClassroomList();
+        if (confirmed) {
+          classrooms = classrooms.filter((cls) => cls.id !== classId);
 
-        // Reset the form
-        classNameInput.value = "";
-        classCodeInput.value = "";
-        saveButton.disabled = true;
+          renderClassroomList();
 
-        // Show select classroom and hide edit classroom
-        showSelectClassroom();
+          classNameInput.value = "";
+          classCodeInput.value = "";
+          saveButton.disabled = true;
+
+          showSelectClassroom();
+        }
       }
 
-      // Function to render the classroom list
       function renderClassroomList() {
         const classroomList = document.querySelector(
           ".classroom-selection-list"
@@ -197,14 +290,14 @@
         classrooms.forEach((classroom) => {
           const classItem = document.createElement("div");
           classItem.className = "class-item-container";
-          classItem.dataset.classCode = classroom.classCode;
+          classItem.dataset.classId = classroom.id;
           classItem.innerHTML = `
-            <div class="class-logo"></div>
+            <div onclick="handleClassroomClick('${classroom.classCode}')" class="class-logo button"></div>
             <div class="class-name">${classroom.className}</div>
             <div class="class-btn">
-              <button class="button edit">Edit</button>
+                <button class="button edit">Edit</button>
             </div>
-          `;
+        `;
           classroomList.appendChild(classItem);
         });
       }
@@ -215,58 +308,142 @@
         validateInputs();
       });
 
-      // Validate class name input
       classNameInput.addEventListener("input", validateInputs);
 
-      // Event listener for the "Cancel" button to go back to the classroom list
       cancelButton.addEventListener("click", showSelectClassroom);
 
-      // Event listener for the "Save" button to save the classroom details
       saveButton.addEventListener("click", async function () {
         const className = classNameInput.value.trim();
         const classCode = classCodeInput.value.trim();
+        const classId = classCodeInput.dataset.classId;
 
-        if (className) {
+        if (className && classCode.length === 6) {
           try {
-            // const response = await fetch(
-            //   `https://spark2-stg.pearson.com/api/checkClassCode/${classCode}`
-            // );
-            // const isValidCode = await response.json();
-            const isValidCode = true;
+            const response = await fetch(
+              `https://spark2-stg.pearson.com/api/checkClassCode/${classCode}`
+            );
+            const isValidCode = await response.json();
+            if (response) {
+              if (isValidCode) {
+                const classroom = {
+                  id: classId || Date.now().toString(),
+                  className,
+                  classCode,
+                };
 
-            if (isValidCode) {
-              // Check if the class already exists in the array
-              const existingClassroomIndex = classrooms.findIndex(
-                (cls) => cls.classCode === classCode
-              );
+                if (classId) {
+                  // Editing an existing classroom
+                  classrooms = classrooms.map((cls) =>
+                    cls.id === classId ? classroom : cls
+                  );
+                } else {
+                  // Creating a new classroom
+                  classrooms.push(classroom);
+                }
 
-              if (existingClassroomIndex !== -1) {
-                // Update the existing classroom
-                classrooms[existingClassroomIndex].className = className;
+                // Update the classroom list UI
+                renderClassroomList();
+
+                classNameInput.value = "";
+                classCodeInput.value = "";
+                saveButton.disabled = true;
+
+                showSelectClassroom();
               } else {
-                // Add the new classroom to the array
-                classrooms.push({ className, classCode });
+                alert("The class code is not valid.");
               }
-
-              // Update the UI
-              renderClassroomList();
-
-              // Reset the form
-              classNameInput.value = "";
-              classCodeInput.value = "";
-              saveButton.disabled = true;
-
-              // Show select classroom and hide edit classroom
-              showSelectClassroom();
             } else {
-              alert("Wrong class code. Please try again.");
+              alert("Failed to validate class code.");
             }
           } catch (error) {
-            console.error("Error:", error);
-            alert("There was an error validating the class code.");
+            console.error("Error validating class code:", error);
+            alert("An error occurred while validating the class code.");
           }
+        } else {
+          alert(
+            "Please ensure that the class name is filled in and the class code is 6 characters long."
+          );
         }
       });
+
+      async function handleClassroomClick(classCode) {
+        if (!classCode) return;
+        try {
+          if (Object.keys(classObject).length === 0) {
+            const response = await fetch(
+              `https://spark.pearson.com/code/${classCode}`
+            );
+
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+              return;
+            }
+
+            studentListHeader.textContent = `Who are you? (Class Code: ${classCode})`;
+
+            // Fetch the class details
+            classObject = await response.json();
+          }
+
+          if (classObject) {
+            const studentListContainer = document.querySelector(
+              ".student-list-container"
+            );
+            studentListContainer.innerHTML = "";
+
+            if (classObject.students && classObject.students.length > 0) {
+              studentList = classObject.students;
+              classObject.students.forEach((student) => {
+                const studentItem = document.createElement("div");
+                studentItem.className = "student-item";
+                studentItem.dataset.userId = student.id;
+                studentItem.onclick = () =>
+                  handleStudentClick(
+                    `${student.userProfile.firstName} ${student.userProfile.lastName} `
+                  );
+
+                studentItem.innerHTML = `
+            <div class="student-logo"></div>
+            <div class="student-name">${student.userProfile.firstName} ${student.userProfile.lastName} </div>
+          `;
+
+                studentListContainer.appendChild(studentItem);
+              });
+              stepCount = 1;
+            } else {
+              studentListContainer.innerHTML = "<div>No students found.</div>";
+            }
+
+            showStudentList();
+          }
+        } catch (error) {
+          console.error("Error fetching class details:", error);
+          alert("Failed to load class details. Please try again.");
+        }
+      }
+
+      function handleStudentClick(name) {
+        stepCount = 2;
+        studentName.textContent = name;
+        showStudentLogin();
+      }
+
+      function handleBackButtonClick() {
+        switch (stepCount) {
+          case 1: {
+            stepCount = 0;
+            showSelectClassroom();
+            break;
+          }
+          case 2: {
+            stepCount = 1;
+            showStudentList();
+            break;
+          }
+          default:
+            break;
+        }
+      }
     </script>
   </body>
 </html>
