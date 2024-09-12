@@ -322,10 +322,11 @@
 
         if (className && classCode.length === 6) {
           try {
-            const response = await fetch(
-              `https://spark2-stg.pearson.com/api/checkClassCode/${classCode}`
-            );
-            const isValidCode = await response.json();
+            // const response = await fetch(
+            //   `https://spark2-stg.pearson.com/api/checkClassCode/${classCode}`
+            // );
+            // const isValidCode = await response.json();
+            const isValidCode = true;
             if (response) {
               if (isValidCode) {
                 const classroom = {
