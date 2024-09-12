@@ -326,6 +326,7 @@
             //   `https://spark2-stg.pearson.com/api/checkClassCode/${classCode}`
             // );
             // const isValidCode = await response.json();
+            const response = true;
             const isValidCode = true;
             if (response) {
               if (isValidCode) {
@@ -347,6 +348,7 @@
 
                 // Update the classroom list UI
                 renderClassroomList();
+                console.log(className, "code", classCode, "id", classId);
 
                 classNameInput.value = "";
                 classCodeInput.value = "";
