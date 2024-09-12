@@ -322,12 +322,10 @@
 
         if (className && classCode.length === 6) {
           try {
-            // const response = await fetch(
-            //   `https://spark2-stg.pearson.com/api/checkClassCode/${classCode}`
-            // );
-            // const isValidCode = await response.json();
-            const response = true;
-            const isValidCode = true;
+            const response = await fetch(
+              `https://spark2-stg.pearson.com/api/checkClassCode/${classCode}`
+            );
+            const isValidCode = await response.json();
             if (response) {
               if (isValidCode) {
                 const classroom = {
@@ -348,7 +346,6 @@
 
                 // Update the classroom list UI
                 renderClassroomList();
-                console.log(className, "code", classCode, "id", classId);
 
                 classNameInput.value = "";
                 classCodeInput.value = "";
