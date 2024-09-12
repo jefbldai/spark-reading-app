@@ -62,7 +62,8 @@ header {
   width: 100%;
 }
 
-.nav-button {
+.nav-button,
+.close-button {
   color: $clr-blue;
   font-size: $font-size-m;
   display: flex;
@@ -72,6 +73,10 @@ header {
   padding: 8px;
   min-width: 159px;
   cursor: pointer;
+}
+
+.close-button {
+  justify-content: flex-end;
 }
 
 #help-button {
@@ -193,15 +198,15 @@ header {
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  // margin: 64px 0;
 }
 
 .class-logo {
-  width: 160px;
-  height: 160px;
-  min-height: 160px;
+  width: 140px;
+  height: 140px;
+  min-height: 140px;
   border-radius: 100px;
-  background-color: #fa9f25;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .class-logo.button {
@@ -375,4 +380,116 @@ header {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+// modal
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 90%;
+  height: 740px;
+  justify-content: space-between;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  display: none; /* Hide all slides initially */
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 40px;
+  gap: 20px;
+}
+
+.slider img {
+  width: 665px;
+  margin: 0 auto;
+}
+
+.slide-text {
+  font-size: $font-size-m;
+  padding: 20px 25px 0;
+  color: $clr-title;
+  line-height: 1.618;
+  height: 136px;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+}
+
+.prev {
+  left: -36px;
+}
+
+.next {
+  right: -36px;
+}
+
+.dot-container {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  border: 3px solid $clr-blue;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: $clr-blue;
+}
+
+.highlight {
+  color: $clr-blue;
+  font-weight: 700;
+  &.danger {
+    color: $clr-red;
+  }
 }

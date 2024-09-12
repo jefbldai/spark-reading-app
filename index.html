@@ -90,7 +90,7 @@
         <button class="button primary">Create Classroom</button>
       </section>
       <section class="container main edit-classroom">
-        <div class="class-logo edit"></div>
+        <div class="class-logo edit" id="class-logo"></div>
         <input
           type="text"
           class="text-input"
@@ -144,12 +144,171 @@
       </section>
     </main>
 
+    <div id="help-modal" class="modal">
+      <div class="modal-content">
+        <span class="close close-button"
+          ><svg
+            width="24"
+            height="24"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <path
+              fill="currentColor"
+              d="M367.2 412.5L99.5 144.8C77.1 176.1 64 214.5 64 256c0 106 86 192 192 192c41.5 0 79.9-13.1 111.2-35.5zm45.3-45.3C434.9 335.9 448 297.5 448 256c0-106-86-192-192-192c-41.5 0-79.9 13.1-111.2 35.5L412.5 367.2zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"
+            />
+          </svg>
+          Close
+        </span>
+        <div class="slider">
+          <div class="slide">
+            <div class="slide-text">
+              You can start by creating your classroom. Click the '<span
+                class="highlight"
+                >Create Classroom</span
+              >' button below.
+            </div>
+            <img
+              src="https://via.placeholder.com/600x400?text=Slide+1"
+              alt="Slide 1"
+            />
+          </div>
+          <div class="slide">
+            <div class="slide-text">
+              Your classroom profile color and icon will be randomly generated.
+              <br />
+              You can set your '<span class="highlight">Classname</span>'.<br />
+              Finally, save your '<span class="highlight">Class Code</span>'
+              provided by your teacher.
+            </div>
+            <img
+              src="https://via.placeholder.com/600x400?text=Slide+2"
+              alt="Slide 2"
+            />
+          </div>
+          <div class="slide">
+            <div class="slide-text">
+              You can click on the '<span class="highlight">Edit</span>' option
+              under the classroom you created to change the class name and your
+              class code. You can also delete your classroom.
+            </div>
+            <img
+              src="https://via.placeholder.com/600x400?text=Slide+3"
+              alt="Slide 3"
+            />
+          </div>
+          <div class="slide">
+            <div class="slide-text">
+              You can now change the '<span class="highlight">Class Name</span>'
+              and/or the '<span class="highlight">Class Code</span>' and click
+              '<span class="highlight">Save</span>'.
+            </div>
+            <img
+              src="https://via.placeholder.com/600x400?text=Slide+4"
+              alt="Slide 4"
+            />
+          </div>
+          <div class="slide">
+            <div class="slide-text">
+              You can also choose to delete the classroom. If so, you can click
+              on the '<span class="highlight danger">Delete</span>' button and
+              click '<span class="highlight">Okay </span>'.
+            </div>
+            <img
+              src="https://via.placeholder.com/600x400?text=Slide+5"
+              alt="Slide 5"
+            />
+          </div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)"
+          ><svg
+            width="72"
+            height="72"
+            viewBox="0 0 72 72"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="21"
+              cy="21"
+              r="21"
+              transform="matrix(-1 0 0 1 57 15)"
+              fill="white"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M36 72C31.2724 72 26.5911 71.0688 22.2234 69.2597C17.8557 67.4505 13.8871 64.7988 10.5442 61.4558C7.20125 58.1129 4.5495 54.1443 2.74033 49.7766C0.931164 45.4089 0 40.7276 0 36C0 31.2724 0.931164 26.5911 2.74033 22.2234C4.5495 17.8557 7.20125 13.8871 10.5442 10.5442C13.8871 7.20125 17.8557 4.54951 22.2234 2.74034C26.5911 0.931167 31.2724 -7.04465e-08 36 0C45.5478 1.42273e-07 54.7045 3.79285 61.4558 10.5442C68.2072 17.2955 72 26.4522 72 36C72 45.5478 68.2072 54.7045 61.4558 61.4558C54.7045 68.2072 45.5478 72 36 72ZM42.828 26.828C43.21 26.459 43.5148 26.0176 43.7244 25.5296C43.934 25.0416 44.0444 24.5167 44.049 23.9856C44.0536 23.4545 43.9524 22.9278 43.7513 22.4362C43.5502 21.9446 43.2531 21.498 42.8776 21.1224C42.502 20.7469 42.0554 20.4498 41.5638 20.2487C41.0722 20.0476 40.5455 19.9464 40.0144 19.951C39.4833 19.9556 38.9584 20.066 38.4704 20.2756C37.9824 20.4852 37.541 20.79 37.172 21.172L25.172 33.172C24.4221 33.9221 24.0009 34.9393 24.0009 36C24.0009 37.0607 24.4221 38.0779 25.172 38.828L37.172 50.828C37.9264 51.5566 38.9368 51.9598 39.9856 51.9507C41.0344 51.9416 42.0376 51.5209 42.7793 50.7793C43.5209 50.0376 43.9416 49.0344 43.9507 47.9856C43.9598 46.9368 43.5566 45.9264 42.828 45.172L33.656 36L42.828 26.828Z"
+              fill="#008ABC"
+            />
+          </svg>
+        </a>
+        <a class="next" onclick="plusSlides(1)"
+          ><svg
+            width="72"
+            height="72"
+            viewBox="0 0 72 72"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="36" cy="36" r="21" fill="white" />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M36 72C40.7276 72 45.4089 71.0688 49.7766 69.2597C54.1443 67.4505 58.1129 64.7988 61.4558 61.4558C64.7988 58.1129 67.4505 54.1443 69.2597 49.7766C71.0688 45.4089 72 40.7276 72 36C72 31.2724 71.0688 26.5911 69.2597 22.2234C67.4505 17.8557 64.7988 13.8871 61.4558 10.5442C58.1129 7.20125 54.1443 4.54951 49.7766 2.74034C45.4089 0.931167 40.7276 -7.04465e-08 36 0C26.4522 1.42273e-07 17.2955 3.79285 10.5442 10.5442C3.79285 17.2955 0 26.4522 0 36C0 45.5478 3.79285 54.7045 10.5442 61.4558C17.2955 68.2072 26.4522 72 36 72ZM29.172 26.828C28.79 26.459 28.4852 26.0176 28.2756 25.5296C28.066 25.0416 27.9556 24.5167 27.951 23.9856C27.9464 23.4545 28.0476 22.9278 28.2487 22.4362C28.4498 21.9446 28.7469 21.498 29.1224 21.1224C29.498 20.7469 29.9446 20.4498 30.4362 20.2487C30.9278 20.0476 31.4545 19.9464 31.9856 19.951C32.5167 19.9556 33.0416 20.066 33.5296 20.2756C34.0176 20.4852 34.459 20.79 34.828 21.172L46.828 33.172C47.5779 33.9221 47.9991 34.9393 47.9991 36C47.9991 37.0607 47.5779 38.0779 46.828 38.828L34.828 50.828C34.0736 51.5566 33.0632 51.9598 32.0144 51.9507C30.9656 51.9416 29.9624 51.5209 29.2207 50.7793C28.4791 50.0376 28.0584 49.0344 28.0493 47.9856C28.0402 46.9368 28.4434 45.9264 29.172 45.172L38.344 36L29.172 26.828Z"
+              fill="#008ABC"
+            />
+          </svg>
+        </a>
+        <div class="dot-container">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+          <span class="dot" onclick="currentSlide(4)"></span>
+          <span class="dot" onclick="currentSlide(5)"></span>
+        </div>
+      </div>
+    </div>
+
     <script>
       let classObject = {};
       let classrooms = [];
       let stepCount = 0;
       let studentList = [];
       let studentId;
+
+      const icons = [
+        "sun.svg",
+        "cloud.svg",
+        "car.svg",
+        "star.svg",
+        "heart.svg",
+      ];
+      const colors = ["#9B5DB6", "#619795", "#FA9F24", "#E06F6F", "#F1CA4D"];
+      let icon;
+      let color;
+
+      function getRandomElement(array) {
+        return array[Math.floor(Math.random() * array.length)];
+      }
+
+      function setIconColor(iconUrl, color, element) {
+        fetch(iconUrl)
+          .then((response) => response.text())
+          .then((svg) => {
+            // Create a temporary element to manipulate SVG
+            const tempDiv = document.createElement("div");
+            tempDiv.innerHTML = svg;
+
+            // Modify the SVG color
+            const svgElement = tempDiv.querySelector("svg");
+            if (svgElement) {
+              svgElement.style.fill = color;
+              element.innerHTML = svgElement.outerHTML;
+            }
+          })
+          .catch((error) => console.error("Error fetching SVG:", error));
+      }
 
       const selectClassroomSection =
         document.querySelector(".select-classroom");
@@ -232,8 +391,14 @@
 
             classNameInput.value = classroom.className;
             classCodeInput.value = classroom.classCode;
-
             classCodeInput.dataset.classId = classId;
+
+            // Set the icon and color
+            document.querySelector(
+              ".class-logo.edit"
+            ).style.backgroundImage = `url('assets/icons/${classroom.icon}')`;
+            document.querySelector(".class-logo.edit").style.color =
+              classroom.color;
 
             validateInputs();
 
@@ -251,8 +416,17 @@
         deleteBtn.style.display = "none";
         classCodeHeader.style.display = "none";
 
-        classCodeHeader.textContent = "";
+        // Randomly select icon and color
+        icon = getRandomElement(icons);
+        color = getRandomElement(colors);
 
+        document.querySelector(
+          ".class-logo.edit"
+        ).style.backgroundImage = `url('assets/icons/${icon}')`;
+        document.querySelector(".class-logo.edit").style.backgroundColor =
+          color;
+
+        classCodeHeader.textContent = "";
         classCodeInput.dataset.classId = "";
 
         showEditClassroom();
@@ -295,12 +469,12 @@
           classItem.className = "class-item-container";
           classItem.dataset.classId = classroom.id;
           classItem.innerHTML = `
-            <div onclick="handleClassroomClick('${classroom.classCode}')" class="class-logo button"></div>
-            <div class="class-name">${classroom.className}</div>
-            <div class="class-btn">
-                <button class="button edit">Edit</button>
-            </div>
-        `;
+      <div class="class-logo" style="background-image: url('assets/icons/${classroom.icon}'); background-color: ${classroom.color};"></div>
+      <div class="class-name">${classroom.className}</div>
+      <div class="class-btn">
+          <button class="button edit">Edit</button>
+      </div>
+    `;
           classroomList.appendChild(classItem);
         });
       }
@@ -332,6 +506,8 @@
                   id: classId || Date.now().toString(),
                   className,
                   classCode,
+                  icon,
+                  color,
                 };
 
                 if (classId) {
@@ -446,6 +622,63 @@
           default:
             break;
         }
+      }
+    </script>
+
+    <script>
+      var modal = document.getElementById("help-modal");
+
+      var helpButton = document.getElementById("help-button");
+
+      var closeButton = document.querySelector(".close");
+
+      helpButton.onclick = function () {
+        modal.style.display = "flex";
+      };
+
+      closeButton.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("slide");
+        var dots = document.getElementsByClassName("dot");
+
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slides[slideIndex - 1].style.display = "flex";
+        dots[slideIndex - 1].className += " active";
       }
     </script>
   </body>
