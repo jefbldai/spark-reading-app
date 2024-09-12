@@ -469,7 +469,7 @@
           classItem.className = "class-item-container";
           classItem.dataset.classId = classroom.id;
           classItem.innerHTML = `
-      <div class="class-logo" style="background-image: url('assets/icons/${classroom.icon}'); background-color: ${classroom.color};"></div>
+      <div class="class-logo button" style="background-image: url('assets/icons/${classroom.icon}'); background-color: ${classroom.color};" onclick="handleClassroomClick('${classroom.classCode}')"></div>
       <div class="class-name">${classroom.className}</div>
       <div class="class-btn">
           <button class="button edit">Edit</button>
